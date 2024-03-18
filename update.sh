@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # stop the running containers
-# docker-compose -p my-ftp -f ./ftp.yml down
+docker-compose -p my-nginx -f ./nginx.yml down
 
 # pull the latest changes from the remote repository
 git get
