@@ -2,7 +2,7 @@ version: "3"
 
 services:
   ftp:
-    image: nginx
+    image: my-nginx:latest
     logging:
       driver: "json-file"
       options:
@@ -13,7 +13,6 @@ services:
       - 8080:80
       - 443:443
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
       - html:/usr/share/nginx/html:ro
 
 volumes:
