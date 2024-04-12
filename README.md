@@ -44,3 +44,19 @@ docker build --no-cache -t my-nginx -f ./Dockerfile .
 docker-compose -p my-nginx -f ./nginx.yml up -d
 docker-compose -p my-nginx -f ./nginx.yml down
 ```
+
+### Deploy with docker swarm
+
+```
+docker build --no-cache -t my-nginx -f ./Dockerfile .
+docker stack deploy -c ./nginx.yml nginx
+docker service ls
+```
+
+## Tags
+
+```
+git update
+git tag 1.0
+git push -u origin --tags
+```
