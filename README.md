@@ -64,6 +64,12 @@ git push -u origin --tags
 ## Set config network bridge
 
 ```
+docker network create \
+  --driver bridge \
+  --subnet 172.31.188.0/26 \
+  --gateway 172.31.188.1 \
+  my_custom_network
+
 docker stack rm nginx
 docker stack deploy -c ./local.yml nginx
 ```

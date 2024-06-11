@@ -1,12 +1,9 @@
 version: "3.8"
 
 networks:
-  my_custom_network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.31.188.0/26
-        # - gateway: 172.31.188.1
+  net:
+    name: my_custom_network
+    external: true
 
 services:
   nginx:
@@ -17,7 +14,7 @@ services:
         max-size: "1m"
         max-file: "2"
     networks:
-      - my_custom_network
+      - net
     ports:
       - 80:80
       - 8080:80
