@@ -65,7 +65,7 @@ git push -u origin --tags
 
 ```
 docker network create \
-  --driver bridge \
+  --driver overlay \
   --subnet 172.31.188.0/26 \
   --gateway 172.31.188.1 \
   my_custom_network
