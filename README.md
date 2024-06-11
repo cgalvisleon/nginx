@@ -60,3 +60,10 @@ git update
 git tag 1.0
 git push -u origin --tags
 ```
+
+## Set config network bridge
+
+```
+docker stack rm nginx
+docker stack deploy -c ./local.yml nginx
+```
