@@ -1,7 +1,8 @@
 version: "3.8"
 
 networks:
-  my_custom_network:
+  net:
+    name: my_custom_network
     external: true
 
 services:
@@ -13,7 +14,7 @@ services:
         max-size: "1m"
         max-file: "2"
     networks:
-      - my_custom_network
+      - net
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nginx.rule=PathPrefix(`/juegos`)"
