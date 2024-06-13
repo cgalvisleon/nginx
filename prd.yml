@@ -1,8 +1,8 @@
 version: "3.8"
 
 networks:
-  net:
-    name: my_custom_network
+  my_custom_network:
+    external: true
 
 services:
   nginx:
@@ -13,10 +13,10 @@ services:
         max-size: "1m"
         max-file: "2"
     networks:
-      - net
+      - my_custom_network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=PathPrefix(`/`)"
+      - "traefik.http.routers.nginx.rule=PathPrefix(`/juegos`)"
       - "traefik.http.services.nginx.loadbalancer.server.port=80"
       - "traefik.http.services.nginx.loadbalancer.sticky=true"
     deploy:
