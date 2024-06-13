@@ -2,8 +2,8 @@ version: "3.8"
 
 networks:
   net:
-    name: my_custom_network
-    external: true
+    external:
+      name: my_custom_network
 
 services:
   nginx:
