@@ -72,4 +72,6 @@ docker network create \
 
 docker stack rm nginx
 docker stack deploy -c ./local.yml nginx
+
+docker stack deploy -c ./prd.yml nginx
 ```
